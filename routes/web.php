@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.principal');
 });
+
+// Route::get('/curs', function (){
+//     return view('layouts.curs');
+// });

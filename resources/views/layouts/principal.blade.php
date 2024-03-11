@@ -28,14 +28,39 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Dades mestres</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ url('/curs') }}">Cursos</a>
-                            <a class="dropdown-item" href="{{ url('/cicle') }}">Cicles</a>
+                            <a class="dropdown-item" href="{{ url('/tipus-usuaris') }}">Tipus de usuari</a>
+                            <a class="dropdown-item" href="{{ url('/usuaris') }}">Usuaris</a>
+                            <a class="dropdown-item" href="{{ url('/cicles') }}">Cicles</a>
+                            <a class="dropdown-item" href="{{ url('/moduls') }}">Mòduls</a>
+                            <a class="dropdown-item" href="{{ url('/assignar-profesor') }}">Assignar professor</a>
+                            <hr>
+                            <a class="dropdown-item" href="{{ url('/assignar-alumnes') }}">Assignar alumnes</a>
+                            <a class="dropdown-item" href="{{ url('/resultats-aprenentatge') }}">Resultats aprenentatge</a>
+                            <a class="dropdown-item" href="{{ url('/criteris-avaluacio') }}">Criteris avaluació</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Professors</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('/assignar-alumnes') }}">Assignar alumnes</a>
+                            <a class="dropdown-item" href="{{ url('/resultats-aprenentarge') }}">Resultats aprenentatge</a>
+                            <a class="dropdown-item" href="{{ url('/criteris-avaluacio') }}">Criteris avaluació</a>
+                            <hr>
+                            <a class="dropdown-item" href="{{ url('/autoavaluacio-alumnes') }}">Autoavaluació alumnes</a>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Alumnes</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('/autoavaluacio') }}">Autoavaluació</a>
                         </div>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <h3>Filip</h3>
                 </form>
             </div>
         </div>
