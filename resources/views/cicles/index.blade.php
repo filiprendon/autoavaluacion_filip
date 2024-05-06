@@ -8,11 +8,19 @@
             <form action="{{ action([App\Http\Controllers\CicleController::class, 'index']) }}">
                 <div class="form-row">
                     <div class="col-1">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="actiuBuscar" name="actiuBuscar"
-                                value="actiu">
-                            <label class="custom-control-label" for="actiuBuscar">Actiu</label>
-                        </div>
+                        @if (old('actiuBuscar') == 'actiu')
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="actiuBuscar" name="actiuBuscar"
+                                    value="actiu" checked>
+                                <label class="custom-control-label" for="actiuBuscar">Actiu</label>
+                            </div>
+                        @else
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="actiuBuscar" name="actiuBuscar"
+                                    value="actiu">
+                                <label class="custom-control-label" for="actiuBuscar">Actiu</label>
+                            </div>
+                        @endif
                     </div>
                     <div class="col-1">
                         <button type="submit" class="btn btn-secondary">Buscar</button>
@@ -52,9 +60,19 @@
                                 </div>
                             @endif
                         </td>
+                        <td>
+                            <form class="float-right ml-1">
+                                <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+                            </form>
+                            <form class="float-right">
+                                <button type="submit" class="btn btn-sm btn-secondary">Editar</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        {{ $cicles->links() }}
     </div>
+    <a href="{{ url('cicle/create')}}" class="btn btn-primary btn-float-add">Añadir ciclo</a>
 @endsection

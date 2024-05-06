@@ -11,7 +11,7 @@ class Modul extends Model
 
     protected $table = 'moduls';
 
-    public $timestamp = false;
+    public $timestamps = false;
 
     public function cursos()
     {

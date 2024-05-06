@@ -11,7 +11,7 @@ class Cursos extends Model
 
     protected $table = 'cursos';
 
-    public $timestamp = false;
+    public $timestamps = false;
 
 
     public function cicle()

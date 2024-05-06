@@ -15,11 +15,12 @@ class CicleController extends Controller
         $actiu = $request->input('actiuBuscar');
 
         if ($actiu == 'actiu') {
-            $cicles = Cicle::where('actiu', '=', true)->get();
+            $cicles = Cicle::where('actiu', '=', true)->paginate(5);
         } else {
-            $cicles = Cicle::all();
+            $cicles = Cicle::paginate(5);
         }
 
+        $request->session()->flashInput($request->input());
 
         return view('cicles.index', compact('cicles'));
     }
@@ -29,7 +30,7 @@ class CicleController extends Controller
      */
     public function create()
     {
-        //
+        return view('cicles.cicle');
     }
 
     /**
@@ -37,7 +38,16 @@ class CicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cicle = new Cicle();
+        $cicle->sigles = $request->input('sigles');
+        $cicle->nom = $request->input('nom');
+        $cicle->descripcio = $request->input('descripcio');
+
+        $cicle->actiu = ($request->input('actiu') == 'actiu');
+
+        $cicle->save();
+
+        return redirect()->action([CicleController::class, 'index']);
     }
 
     /**
