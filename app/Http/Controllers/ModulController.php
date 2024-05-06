@@ -12,7 +12,12 @@ class ModulController extends Controller
      */
     public function index()
     {
-        //
+
+        $moduls = Modul::all();
+
+
+
+        return view('moduls.index', compact('moduls'));
     }
 
     /**

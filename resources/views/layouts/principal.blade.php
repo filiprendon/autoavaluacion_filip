@@ -30,8 +30,8 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ url('/tipus-usuaris') }}">Tipus de usuari</a>
                             <a class="dropdown-item" href="{{ url('/usuaris') }}">Usuaris</a>
-                            <a class="dropdown-item" href="{{ url('/cicles') }}">Cicles</a>
-                            <a class="dropdown-item" href="{{ url('/moduls') }}">Mòduls</a>
+                            <a class="dropdown-item" href="{{ url('cicle') }}">Cicles</a>
+                            <a class="dropdown-item" href="{{ url('modul') }}">Mòduls</a>
                             <a class="dropdown-item" href="{{ url('/assignar-profesor') }}">Assignar professor</a>
                             <hr>
                             <a class="dropdown-item" href="{{ url('/assignar-alumnes') }}">Assignar alumnes</a>

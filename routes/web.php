@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CicleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ModulController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.principal');
 });
+
+Route::resource('cicle', CicleController::class);
+Route::resource('modul', ModulController::class);
 
 // Route::get('/curs', function (){
 //     return view('layouts.curs');

@@ -10,9 +10,18 @@ class CicleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $actiu = $request->input('actiuBuscar');
+
+        if ($actiu == 'actiu') {
+            $cicles = Cicle::where('actiu', '=', true)->get();
+        } else {
+            $cicles = Cicle::all();
+        }
+
+
+        return view('cicles.index', compact('cicles'));
     }
 
     /**
