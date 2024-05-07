@@ -22,7 +22,6 @@ Route::get('/', function () {
 Route::resource('cicle', CicleController::class);
 Route::resource('modul', ModulController::class);
 
-
 // Route::get('/curs', function (){
 //     return view('layouts.curs');
 // });

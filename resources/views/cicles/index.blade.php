@@ -68,11 +68,8 @@
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
                             </form>
-                            <form class="float-right"
-                                action="{{ action([App\Http\Controllers\CicleController::class, 'edit'], ['cicle' => $cicle->id]) }}"
-                                method="POST">
+                            <form class="float-right" action="{{ action([App\Http\Controllers\CicleController::class, 'edit'], ['cicle' => $cicle->id]) }}">
                                 @csrf
-                                @method('put')
                                 <button type="submit" class="btn btn-sm btn-secondary">Editar</button>
                             </form>
                         </td>
