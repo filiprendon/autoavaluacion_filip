@@ -63,16 +63,30 @@ class CicleController extends Controller
      */
     public function edit(Cicle $cicle)
     {
-        //
+        return view('cicles.update', compact('cicle'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Cicle $cicle)
-    {
-        //
-    }
+{
+    $request->validate([
+        'sigles' => 'required',
+        'nom' => 'required',
+        'descripcio' => 'required',
+    ]);
+
+    $cicle->update([
+        'sigles' => $request->sigles,
+        'nom' => $request->nom,
+        'descripcio' => $request->descripcio,
+        'actiu' => $request->has('actiu') ? true : false,
+    ]);
+
+    return redirect()->action([CicleController::class, 'index']);
+}
+
 
     /**
      * Remove the specified resource from storage.

@@ -62,12 +62,17 @@
                         </td>
                         <td>
                             <form class="float-right ml-1"
-                                action="{{ action([App\Http\Controllers\CicleController::class, 'destroy'], ['cicle' => $cicle->id]) }}" method="POST">
+                                action="{{ action([App\Http\Controllers\CicleController::class, 'destroy'], ['cicle' => $cicle->id]) }}"
+                                method="POST">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
                             </form>
-                            <form class="float-right">
+                            <form class="float-right"
+                                action="{{ action([App\Http\Controllers\CicleController::class, 'edit'], ['cicle' => $cicle->id]) }}"
+                                method="POST">
+                                @csrf
+                                @method('put')
                                 <button type="submit" class="btn btn-sm btn-secondary">Editar</button>
                             </form>
                         </td>
