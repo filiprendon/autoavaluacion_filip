@@ -43,7 +43,7 @@ class CicleController extends Controller
         $cicle->nom = $request->input('nom');
         $cicle->descripcio = $request->input('descripcio');
 
-        $cicle->actiu = ($request->input('actiu') == 'actiu');
+        $cicle->actiu = $request->has('actiu');
 
         $cicle->save();
 
@@ -79,6 +79,8 @@ class CicleController extends Controller
      */
     public function destroy(Cicle $cicle)
     {
-        //
+        $cicle->delete();
+
+        return redirect()->action([CicleController::class, 'index']);
     }
 }

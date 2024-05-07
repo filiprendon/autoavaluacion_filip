@@ -61,7 +61,10 @@
                             @endif
                         </td>
                         <td>
-                            <form class="float-right ml-1">
+                            <form class="float-right ml-1"
+                                action="{{ action([App\Http\Controllers\CicleController::class, 'destroy'], ['cicle' => $cicle->id]) }}" method="POST">
+                                @csrf
+                                @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
                             </form>
                             <form class="float-right">
@@ -74,5 +77,5 @@
         </table>
         {{ $cicles->links() }}
     </div>
-    <a href="{{ url('cicle/create')}}" class="btn btn-primary btn-float-add">Añadir ciclo</a>
+    <a href="{{ url('cicle/create') }}" class="btn btn-primary btn-float-add">Añadir ciclo</a>
 @endsection
