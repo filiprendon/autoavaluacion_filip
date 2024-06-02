@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\CicleController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuariController;
 use App\Http\Controllers\ModulController;
+use App\Http\Controllers\TipusUsuariController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,8 @@ Route::get('/', function () {
 
 Route::resource('cicle', CicleController::class);
 Route::resource('modul', ModulController::class);
+Route::resource('usuaris', UsuariController::class);
+Route::resource('tipus-usuaris', TipusUsuariController::class);
 
 // Route::get('/curs', function (){
 //     return view('layouts.curs');

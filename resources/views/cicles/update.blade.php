@@ -12,10 +12,10 @@
             <input type="text" class="form-control" id="sigles" name="sigles" required>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="nom">Nombre:</label>
             <input type="text" class="form-control" id="nom" name="nom" required>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <label for="descripcio">Descripción:</label>

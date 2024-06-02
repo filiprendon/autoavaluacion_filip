@@ -40,7 +40,7 @@ class CicleController extends Controller
     {
         $cicle = new Cicle();
         $cicle->sigles = $request->input('sigles');
-        $cicle->nom = $request->input('nom');
+        // $cicle->nom = $request->input('nom');
         $cicle->descripcio = $request->input('descripcio');
 
         $cicle->actiu = $request->has('actiu');
@@ -73,13 +73,11 @@ class CicleController extends Controller
 {
     $request->validate([
         'sigles' => 'required',
-        'nom' => 'required',
         'descripcio' => 'required',
     ]);
 
     $cicle->update([
         'sigles' => $request->sigles,
-        'nom' => $request->nom,
         'descripcio' => $request->descripcio,
         'actiu' => $request->has('actiu') ? true : false,
     ]);

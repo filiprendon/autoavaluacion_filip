@@ -11,7 +11,7 @@ class Cicle extends Model
 
     protected $table = 'cicles';
 
-    protected $fillable = ['sigles', 'nom', 'descripcio', 'actiu'];
+    protected $fillable = ['sigles', 'descripcio', 'actiu'];
     public $timestamps = false;
 
     public function cursos()

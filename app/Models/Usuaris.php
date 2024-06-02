@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Usuari extends Authenticatable
+class Usuaris extends Authenticatable
 {
     use HasFactory;
 
@@ -29,6 +29,7 @@ class Usuari extends Authenticatable
         'actiu' => 'boolean',
     ];
 
+    public $timestamps = false;
     public function tipusUsuari()
     {
         return $this->belongsTo(TipusUsuari::class, 'tipus_usuaris_id');
