@@ -15,7 +15,7 @@
                 <th>Apellido</th>
                 <th>Activo</th>
                 <th>Tipo</th>
-
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -43,9 +43,24 @@
                         @endif
                     </td>
                     <td>{{ $usuari->tipus_usuari_id }}</td>
+                    <td>
+                        <form class="float-right ml-1"
+                            action="{{ action([App\Http\Controllers\UsuariController::class, 'destroy'], ['usuari' => $usuari->id]) }}"
+                            method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm btn-danger">Borrar</button>
+                        </form>
+                        <form class="float-right"
+                            action="{{ action([App\Http\Controllers\UsuariController::class, 'edit'], ['usuari' => $usuari->id]) }}">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-secondary">Editar</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    {{ $usuaris->links()}}
 </div>
 @endsection

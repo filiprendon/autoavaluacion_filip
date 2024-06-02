@@ -13,6 +13,8 @@ class UsuariController extends Controller
     public function index()
     {
         $usuaris = Usuaris::all();
+        $usuaris = Usuaris::paginate(10);
+
         return view('usuaris.index', compact('usuaris'));
     }
 
@@ -57,7 +59,7 @@ class UsuariController extends Controller
      */
     public function edit(Usuaris $usuari)
     {
-        //
+        return view('usuaris.update', compact('usuari'));
     }
 
     /**
@@ -65,7 +67,24 @@ class UsuariController extends Controller
      */
     public function update(Request $request, Usuaris $usuari)
     {
-        //
+        $request->validate([
+            'nom_usuari' => 'required',
+            'nom' => 'required',
+            'cognom' => 'required',
+            'correu' => 'required|email',
+            'tipus_usuaris_id' => 'required'
+        ]);
+
+        $usuari->update([
+            'nom_usuari' => $request->nombreUsuario,
+            'nom' => $request->nombre,
+            'cognom' => $request->apellido,
+            'correu' => $request->email,
+            'tipus_usuaris_id' => $request->tipo,
+            'actiu' => $request->has('activo') ? true : false,
+        ]);
+
+        return redirect()->action([UsuariController::class, 'index']);
     }
 
     /**
@@ -73,6 +92,8 @@ class UsuariController extends Controller
      */
     public function destroy(Usuaris $usuari)
     {
-        //
+        $usuari->delete();
+
+        return redirect()->action([UsuariController::class, 'index']);
     }
 }

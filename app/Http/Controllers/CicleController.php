@@ -70,20 +70,20 @@ class CicleController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Cicle $cicle)
-{
-    $request->validate([
-        'sigles' => 'required',
-        'descripcio' => 'required',
-    ]);
+    {
+        $request->validate([
+            'sigles' => 'required',
+            'descripcio' => 'required',
+        ]);
 
-    $cicle->update([
-        'sigles' => $request->sigles,
-        'descripcio' => $request->descripcio,
-        'actiu' => $request->has('actiu') ? true : false,
-    ]);
+        $cicle->update([
+            'sigles' => $request->sigles,
+            'descripcio' => $request->descripcio,
+            'actiu' => $request->has('actiu') ? true : false,
+        ]);
 
-    return redirect()->action([CicleController::class, 'index']);
-}
+        return redirect()->action([CicleController::class, 'index']);
+    }
 
 
     /**
